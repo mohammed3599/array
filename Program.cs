@@ -57,11 +57,33 @@
             System.Console.WriteLine("The number of odd: " + odd);
 
         }
+
+        static void secondLargest()
+        {
+            int[] num = { 43, 62, 53, 79, 22, 93, 37 };
+            int largest = 0;
+            int second = 0;
+            foreach (int number in num)
+            {
+                if (number > largest)
+                {
+                    second = largest;
+                    largest = number;
+                }
+                else if (number > second && number < largest)
+                {
+                    second = number;
+                }
+            }
+
+            System.Console.WriteLine("The second largest number = " + second);
+        }
         static void Main(string[] args)
         {
             Average();
             MaxMin();
             evenOdd();
+            secondLargest();
             //int[] a = new int[5];
             //a[0] = 1;
             //a[1] = 2;
